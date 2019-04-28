@@ -1,0 +1,58 @@
+<h1>Pets By Owner</h1>
+<br />
+
+<div>
+  <div class="form-group row">
+
+    <label class="col-sm-auto col-form-label" for="petNameInput">Pet Name</label>
+    <input type="text" class="form-control col-sm-3" id="petNameInput" placeholder="Enter Pet Name" [(ngModel)]="petName">
+     
+    <label class="col-sm-auto col-form-label" for="petTypeSelection">Pet Type</label>
+    <select class="form-control col-sm-2" id="petTypeSelection" [(ngModel)]="selectedPetType">
+      <option></option>
+      <option *ngFor="let pet of PetType.values()">{{pet}}</option>
+    </select>
+
+  </div>
+
+  <div class="form-group row">
+    <button class="btn btn-primary" (click)="search()">Search</button>
+  </div>
+
+  <table class='table' *ngIf="people">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Pets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people; index as id">
+        <td>{{ person.name }}</td>
+        <td>{{ person.gender }}</td>
+        <td>{{ person.age }}</td>
+        <td class="relative-column">
+          <div class="panel panel-info" [style.display]="(person.pets.length > 0) ? 'block' : 'none'">
+            <div class="panel-heading collapsed" data-toggle="collapse" attr.data-target="#pet{{id}}">
+              <i class="fa fa-fw fa-chevron-down"></i>
+              <i class="fa fa-fw fa-chevron-right"></i>
+            </div>
+            <div class="panel-body">
+              <div class="collapse" id="pet{{id}}">
+                <table class="table-borderless" >
+                  <tr *ngFor="let pet of person.pets">
+                    <td>{{ pet.type }}</td>
+                    <td>{{ pet.name }}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

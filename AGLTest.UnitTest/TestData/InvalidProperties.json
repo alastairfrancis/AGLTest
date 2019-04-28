@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Samantha",
+    "gender": "Female",
+    "age": -1,
+    "pets": [
+      {
+        "name": "Tabby",
+        "pettype": "Cat"
+      }
+    ]
+  },
+  {
+    "name": "Alice",
+    "misspelt": "Female",
+    "age": 64,
+    "pets": [
+      {
+        "name": "Simba",
+        "type": "Cat"
+      },
+      {
+        "name": "Nemo",
+        "type": "Fish"
+      }
+    ]
+  }
+]
