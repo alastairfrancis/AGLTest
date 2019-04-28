@@ -21,6 +21,7 @@ Unit tests have been implemented in xUnit, and can be run in the Visual Studio t
 
 ## Console Application:
 AGLTest.Console is a portable .Net core project.  To run it from the command shell use the `dotnet` runtime:
+
 	> dotnet AGLTest.DataViewer.dll
 
 Custom views can be added by creating a class implementing the IDataView interface.  The ViewFactory will resolve all views that implement this interface.  I implemented this solution to demonstrate an example of using factories to isolate client implementation, from the plumbing associated adding a new feature. 
